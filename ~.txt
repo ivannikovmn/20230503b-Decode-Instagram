@@ -1,0 +1,32 @@
+﻿1) Создать папку проекта instagram
+2) Создать docker-compose.yml в нем
+3) Настроить файл чтобы запускался контейнер posgreSQL  - instagramDB
+4) По пробовать подключиться к нему через Extension в VSCode
+
+------------------------------------
+Cmd
+docker --version
+
+Termnal vsc (node) (лежит по D:\!nodejs\instagram.com)
+docker-compose up --build (--build в первый раз используется при скачивании далее не нужно)
+docker-compose up (+ по умолчанию запускает docker-compose.yml)
+npm init 
+npm i express
+node server.js
+npm start
+npm run dev
+npm i nodemon -g (глобально устанавливается)
+npm i nodemon (локально)
+npm i morgan (можно видеть различные логи)
+npm i multer (для того чтобы файлы загружать)
+
+Termnal vsc(bash) (Git)
+git init 
+	.gitignore node_modules 
+git add .
+git commit -m "initial"
+git remote add origin https://github.com/ivannikovmn/20230503b-Decode-Instagram
+	p.s git branch --move master main - переименовать master в main в visual code 
+git push origin main
+---
+
