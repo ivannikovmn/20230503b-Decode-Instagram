@@ -1,8 +1,11 @@
 const sendEmail = require('../utils/sendMail')
 const AuthCode = require('./AuthCode')
+const jwt = require('jsonwebtoken');
 
 const User = require('./User');
 const Role = require('./Role');
+
+const {jwtOptions} = require('./passport')
 
 const SendVerificationEmail = (req, res) => {
     // console.log(req.body);
@@ -13,8 +16,7 @@ const SendVerificationEmail = (req, res) => {
         email: req.body.email,
         code: code,
         valid_till: Date.now() + 120000
-    })    
-    
+    })
     sendEmail(req.body.email, "Код авторизации instagram.com", code)
 
     res.status(200).end();
@@ -35,9 +37,9 @@ const verifyCode = async (req, res) => {
     } else if(authCode.code !== req.body.code){
         res.status(401).send({error: "code is invalid"});
     }
-
-    //  console.log(new Date(authCode.valid_till).getTime() > Date.now())
     else {
+
+
         let user = await User.findOne({where: {email: req.body.email}})
         const role = await Role.findOne({where: {name: 'client'}})
         if(!user) {
@@ -45,11 +47,30 @@ const verifyCode = async (req, res) => {
                 roleId: role.id,
                 email: req.body.email
             })
-        }  
-        res.status(200).end();        
+        }
+
+
+        // const token = jwt.sign(user, jwtOptions.secretOrKey);
+        const token = jwt.sign({ 
+            id: user.id, 
+            email: user.email,  
+            full_name: user.full_name,
+            phone: user.phone,
+            role: {
+                id: role.id,
+                name: role.name
+            },
+
+        }, jwtOptions.secretOrKey, {
+            expiresIn: 24 * 60 * 60 * 365
+        });
+        // res.status(200).send(user);
+        res.status(200).send({token});
     }
 
-      
+    // console.log(new Date(authCode.valid_till).getTime() > Date.now())
+
+   
 }
 
 module.exports = {

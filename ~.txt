@@ -31,6 +31,9 @@ npx sequelize-cli migration:generate --name create-auth-code
 npx sequelize-cli db:migrate:undo:all
 npm install nodemailer
 npx sequelize-cli db:seed --seed seedRole.js
+-
+npm i passport jsonwebtoken
+npm i passport-jwt
 
 Termnal vsc(bash) (Git)
 git init 
@@ -46,3 +49,8 @@ git remote add origin https://github.com/ivannikovmn/20230621a-Decode-Instagram
 git add .
 git commit -m "add RestAPI l-4 (user registration)"
 git push origin main
+---
+git add .
+git commit -m "add RestAPI l-5 (user authorization)"
+git push origin main
+
