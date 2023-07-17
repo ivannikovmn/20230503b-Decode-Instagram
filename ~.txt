@@ -3,8 +3,8 @@
 3) Настроить файл чтобы запускался контейнер posgreSQL  - instagramDB
 4) По пробовать подключиться к нему через Extension в VSCode
 -
-1. Сделать функционал регистрация, входа и выхода
-2. Сделать функционал добавления, редактирования и удвоения блогов
+1. Сделать функционал регистрация, входа и выхода +
+2. Сделать функционал добавления +,  редактирования и удвоения блогов -
 
 ------------------------------------
 Cmd
@@ -52,6 +52,8 @@ npx sequelize-cli db:seed --seed 20230717073500-seed_participants.js
 npx sequelize-cli migration:generate --name create-follower
 npx sequelize-cli seed:generate --name seed_followers
 npx sequelize-cli db:seed --seed 20230717082418-seed_followers.js
+--- l-7
+npx sequelize-cli migration:generate --name create-resume
 
 Termnal vsc(bash) (Git)
 git init 
@@ -75,4 +77,8 @@ git push origin main
 git add .
 git commit -m "add RestAPI l-6 (region[country, city], participants, followers)"
 git push origin main
-
+-
+git add .
+git commit -m "add RestAPI l-7 (add resume [models and migrations])"
+git push origin main
+---
