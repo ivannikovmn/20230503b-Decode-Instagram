@@ -2,6 +2,9 @@
 2) Создать docker-compose.yml в нем
 3) Настроить файл чтобы запускался контейнер posgreSQL  - instagramDB
 4) По пробовать подключиться к нему через Extension в VSCode
+-
+1. Сделать функционал регистрация, входа и выхода
+2. Сделать функционал добавления, редактирования и удвоения блогов
 
 ------------------------------------
 Cmd
@@ -34,6 +37,21 @@ npx sequelize-cli db:seed --seed seedRole.js
 -
 npm i passport jsonwebtoken
 npm i passport-jwt
+--- l-6
+npx sequelize-cli migration:generate --name create-country
+npx sequelize-cli migration:generate --name create-city
+npx sequelize-cli db:migrate
+npx sequelize-cli seed:generate --name seed_countries
+npx sequelize-cli seed:generate --name seed_cities
+npx sequelize-cli db:seed --seed 20230714134707-seed_countries.js
+npx sequelize-cli db:seed --seed 20230714134813-seed_cities.js
+-
+npx sequelize-cli migration:generate --name create-participant
+npx sequelize-cli seed:generate --name seed_participants
+npx sequelize-cli db:seed --seed 20230717073500-seed_participants.js
+npx sequelize-cli migration:generate --name create-follower
+npx sequelize-cli seed:generate --name seed_followers
+npx sequelize-cli db:seed --seed 20230717082418-seed_followers.js
 
 Termnal vsc(bash) (Git)
 git init 
@@ -52,5 +70,9 @@ git push origin main
 ---
 git add .
 git commit -m "add RestAPI l-5 (user authorization)"
+git push origin main
+-
+git add .
+git commit -m "add RestAPI l-6 (region[country, city], participants, followers)"
 git push origin main
 
