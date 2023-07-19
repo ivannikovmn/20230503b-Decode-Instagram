@@ -9,7 +9,7 @@ const Resume = sequelize.define('Resume', {
     type: DataTypes.STRING,
     allowNull: false,
   },  
-  stories: {
+  story: {
     type: DataTypes.STRING,
     allowNull: false,
   },    
@@ -20,11 +20,7 @@ const Resume = sequelize.define('Resume', {
   participants: {
     type: DataTypes.STRING,
     allowNull: false,
-  },  
-  followers: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },         
+  }        
 });
 
 Resume.belongsTo(City, { foreignKey: 'cityId' }); // Определяем внешний ключ 'roleId'

@@ -4,11 +4,30 @@
 4) По пробовать подключиться к нему через Extension в VSCode
 -
 1. Сделать функционал регистрация, входа и выхода +
-2. Сделать функционал добавления +,  редактирования и удвоения блогов -
+2. Сделать функционал добавления +,  редактирования и удаление блогов(постов, сторис) -
+-
+1. Реализовать функционал регистрации пользователя в инстаграм. +
+2. Реализовать функционал Авторизации через логин и пароль в инстаграм +
+3. Реализовать функционал добавления поста в инстаграм
+4. Создать API для получения списка все своих(авторизованного пользователя) постов 
+5. Создать API для получения списка всех постов
+6. Создать API для получения одного поста по ID
+7. Создать API для удаления поста по ID
+8. Создать API для редактирования поста
+9. Создать API для редактирования данных пользователя, кроме пароля
+10. Создать API для добавления сторис
+11. Создать API для удаления сторис
+12. Создать API для получения списка сторис по пользователю за последние 24 часа
 
+https://docs.google.com/document/d/1y_5n4ELZWvgtChaTtv3SdYCkY0JyaFYj7qV8BoQbdZQ/edit?usp=sharing
 ------------------------------------
 Cmd
 docker --version
+
+-- в win 2019 сервер когда не работает докер и после обновления системы
+--- сmd bcdedit /enum
+--- сmd bcdedit /set hypervisorlaunchtype auto
+--- перезагрузка
 
 Termnal vsc (node) (лежит по D:\!nodejs\instagram.com)
 docker-compose up --build (--build в первый раз используется при скачивании далее не нужно)
@@ -49,11 +68,10 @@ npx sequelize-cli db:seed --seed 20230714134813-seed_cities.js
 npx sequelize-cli migration:generate --name create-participant
 npx sequelize-cli seed:generate --name seed_participants
 npx sequelize-cli db:seed --seed 20230717073500-seed_participants.js
-npx sequelize-cli migration:generate --name create-follower
-npx sequelize-cli seed:generate --name seed_followers
-npx sequelize-cli db:seed --seed 20230717082418-seed_followers.js
 --- l-7
 npx sequelize-cli migration:generate --name create-resume
+--- l-8
+
 
 Termnal vsc(bash) (Git)
 git init 
@@ -75,10 +93,13 @@ git commit -m "add RestAPI l-5 (user authorization)"
 git push origin main
 -
 git add .
-git commit -m "add RestAPI l-6 (region[country, city], participants, followers)"
+git commit -m "add RestAPI l-6 (region [country, city], participants, followers)"
 git push origin main
 -
 git add .
 git commit -m "add RestAPI l-7 (add resume [models and migrations])"
 git push origin main
 ---
+git add .
+git commit -m "add RestAPI l-8 (add resume [create], fix [delete followers])"
+git push origin main

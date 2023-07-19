@@ -17,7 +17,7 @@ require('./app/auth/passport')
 app.use(require('./app/auth/routes'))
 app.use(require('./app/region/routes')) 
 app.use(require('./app/participants/routes'))
-app.use(require('./app/followers/routes'))
+app.use(require('./app/resume/routes')) 
 
 app.listen(8000, () => {
     console.log('Server is listening on port 8000');

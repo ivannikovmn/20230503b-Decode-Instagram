@@ -13,7 +13,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      stories: {
+      story: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -22,10 +22,6 @@ module.exports = {
         allowNull: false,
       },
       participants: {
-        type: Sequelize.TEXT,
-        allowNull: false,
-      },
-      followers: {
         type: Sequelize.TEXT,
         allowNull: false,
       },

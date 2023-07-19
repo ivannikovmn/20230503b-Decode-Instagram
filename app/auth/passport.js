@@ -3,6 +3,8 @@ const passportJWT = require('passport-jwt');
 const JwtStrategy = passportJWT.Strategy;
 const ExtractJwt = passportJWT.ExtractJwt;
 
+const User = require('./User')
+
 const jwtOptions = {
     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
     secretOrKey: 'секретный_ключ',
@@ -14,6 +16,7 @@ const jwtOptions = {
     // Если пользователь найден, вызовите `done(null, user)`,
     // иначе `done(null, false)` или `done(error)` в случае ошибки.
     const user = await User.findByPk(jwPayload.id)
+    
     if(user) done(null, user)
     else done(null, false)
   }));
