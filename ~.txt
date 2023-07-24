@@ -14,10 +14,10 @@
 6. Создать API для получения одного поста по ID +
 7. Создать API для удаления поста по ID +
 8. Создать API для редактирования поста +
-9. Создать API для редактирования данных пользователя, кроме пароля
-10. Создать API для добавления сторис
-11. Создать API для удаления сторис
-12. Создать API для получения списка сторис по пользователю за последние 24 часа
+9. Создать API для редактирования данных пользователя, кроме пароля +
+10. Создать API для добавления сторис +
+11. Создать API для удаления сторис +
+12. Создать API для получения списка сторис по пользователю за последние 24 часа +
 
 https://docs.google.com/document/d/1y_5n4ELZWvgtChaTtv3SdYCkY0JyaFYj7qV8BoQbdZQ/edit?usp=sharing
 ------------------------------------
@@ -108,3 +108,6 @@ git add .
 git commit -m "add RestAPI l-9 (resume: p1 list, p2 delete, p3 edit)"
 git push origin main
 ---
+git add .
+git commit -m "add edit user, create/list[before24hours]/delete story"
+git push origin main

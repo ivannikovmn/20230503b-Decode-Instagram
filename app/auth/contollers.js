@@ -73,7 +73,39 @@ const verifyCode = async (req, res) => {
    
 }
 
+const editUser = async (req, res) => {
+    try {
+        // Получаем данные для обновления из req.body
+        const updatedData = {
+            email: req.body.email,
+            full_name: req.body.full_name,
+            phone: req.body.phone,
+        };
+
+        // Находим пользователя по email из запроса
+        let user = await User.findOne({ where: { email: 'local_host@mail.ru' } });
+
+        if (!user) {
+            return res.status(404).json({ message: 'Пользователь не найден.' });
+        }
+
+        // Обновляем данные пользователя с помощью метода update
+        await User.update(updatedData, {
+            where: {
+                id: user.id
+            }
+        });
+
+        return res.status(200).json({ message: 'Данные пользователя успешно обновлены.' });
+    } catch (error) {
+        console.error('Ошибка при обновлении данных пользователя:', error);
+        return res.status(500).json({ message: 'Ошибка сервера.' });
+    }
+};
+
+
 module.exports = {
     SendVerificationEmail,
-    verifyCode
+    verifyCode,
+    editUser
 }
