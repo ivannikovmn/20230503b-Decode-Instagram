@@ -45,6 +45,15 @@ const getMyResumes = async (req, res) => {
     res.status(200).send(resumes)
 }
 
+const getUsernameResumes = async (req, res) => {
+    // console.log('req.params.username ' + req.params.username);
+    const resumes = await Resume.findAll({
+        where: {
+            userId: req.params.username           
+        }});
+    res.status(200).send(resumes)   
+}
+
 const getAllResumes = async (req, res) => {
     const resumes = await Resume.findAll({
         where: {
@@ -129,6 +138,7 @@ module.exports = {
     createResume,
     getMyResumes,
     getAllResumes,
+    getUsernameResumes,
     getAllResumesBefore24hours,
     getResume,
     deleteResume,
