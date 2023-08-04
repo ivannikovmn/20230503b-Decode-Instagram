@@ -43,9 +43,11 @@ Cmd
 docker --version
 
 -- в win 2019 сервер когда не работает докер и после обновления системы
---- сmd bcdedit /enum
---- сmd bcdedit /set hypervisorlaunchtype auto
---- перезагрузка
+--- сmd 
+---- попробовать Docker Desktop запустить
+---- bcdedit /enum
+---- bcdedit /set hypervisorlaunchtype auto
+---- перезагрузка
 
 Termnal vsc (node) (лежит по D:\!nodejs\instagram.com)
 docker-compose up --build (--build в первый раз используется при скачивании далее не нужно)
@@ -54,7 +56,7 @@ npm init
 npm i express
 node server.js
 npm start
-npm run dev
+
 npm i nodemon -g (глобально устанавливается)
 npm i nodemon (локально)
 npm i morgan (можно видеть различные логи)
@@ -132,4 +134,8 @@ git push origin main
 ---
 git add .
 git commit -m "add /api/posts/byUsername/:username"
+git push origin main
+---
+git add .
+git commit -m "fix router post"
 git push origin main
