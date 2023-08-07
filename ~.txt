@@ -30,7 +30,7 @@
 18. API для получения списка подписчиков на пользователя по username
 19. API для получения списка пользователей на кого подписан пользователь по username
 20. API для получения детальной информации о пользователе по username
-21. Разработать API для создания и удаление лайков на пост, коммент, сторис
+21. Разработать API для создания и удаление лайков на пост, сторис, коммент (создание/удаление лайка для поста/сторис +)
 22. Бонус:
 	Бонусный сложный алгоритм написать API который бутет возвращать список Suggestions (предложение)
 	Логика должна находить максимум 5 рекомендаций
@@ -90,7 +90,8 @@ npx sequelize-cli seed:generate --name seed_participants
 npx sequelize-cli db:seed --seed 20230717073500-seed_participants.js
 --- l-7
 npx sequelize-cli migration:generate --name create-resume
---- l-8
+--- l-14
+npx sequelize-cli migration:generate --name create-like-model
 
 
 Termnal vsc(bash) (Git)
@@ -138,4 +139,8 @@ git push origin main
 ---
 git add .
 git commit -m "fix router post"
+git push origin main
+-
+git add .
+git commit -m "add RestAPI l-14(p2-p4,p6[delete] post/story likes)"
 git push origin main
