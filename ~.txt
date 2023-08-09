@@ -23,7 +23,7 @@
 14. Создать API для удаления комментариев
 15. Создать API для получения списка комментариев по ID поста
 -
-16. Реализовать функционал подписки и отписки от пользователей.
+16. Реализовать функционал подписки и отписки от пользователей +
 -
 17. Создать API для получения списка постов по username пользователя (/api/posts/byUsername/:username) +
 -
@@ -56,7 +56,7 @@ npm init
 npm i express
 node server.js
 npm start
-
+npm run dev
 npm i nodemon -g (глобально устанавливается)
 npm i nodemon (локально)
 npm i morgan (можно видеть различные логи)
@@ -92,7 +92,7 @@ npx sequelize-cli db:seed --seed 20230717073500-seed_participants.js
 npx sequelize-cli migration:generate --name create-resume
 --- l-14
 npx sequelize-cli migration:generate --name create-like-model
-
+npx sequelize-cli migration:generate --name create-follower
 
 Termnal vsc(bash) (Git)
 git init 
@@ -143,4 +143,8 @@ git push origin main
 -
 git add .
 git commit -m "add RestAPI l-14(p2-p4,p6[delete] post/story likes)"
+git push origin main
+-
+git add .
+git commit -m "add RestAPI l-14(p2-p3[new], p6[delete] followers)"
 git push origin main
