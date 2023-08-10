@@ -1,5 +1,6 @@
 const Follower = require('./Follower')
-const {NEW, INVITATION, DECLINED} = require('./utils')
+// const {NEW, INVITATION, DECLINED} = require('./utils')
+const {NEW} = require('./utils')
 
 const createFollower = async (req, res) => {
     // console.log(req.body);
@@ -15,6 +16,19 @@ const createFollower = async (req, res) => {
     }
 }
 
+const getUsernameFollowers = async (req, res) => {
+    try{
+        // console.log('req.params.username ' + req.params.username);
+        const followers = await Follower.findAll({
+            where: {
+                userid: req.params.username           
+            }});
+        res.status(200).send(followers)   
+    } catch(error){
+        res.status(500).send(error)
+    }    
+}
+
 const deleteFollower = async (req, res) => {
     try{
         await Follower.destroy({
@@ -28,7 +42,22 @@ const deleteFollower = async (req, res) => {
     }    
 }
 
+const getUsernameFollowed = async (req, res) => {
+    try{
+        console.log('req.params.username ' + req.params.username);
+        const followers = await Follower.findAll({
+            where: {
+                followerUserId: req.params.username                    
+            }});
+        res.status(200).send(followers)   
+    } catch(error){
+        res.status(500).send(error)
+    }    
+}
+
 module.exports = {
     createFollower,
-    deleteFollower
+    getUsernameFollowers,
+    deleteFollower,
+    getUsernameFollowed
 }
