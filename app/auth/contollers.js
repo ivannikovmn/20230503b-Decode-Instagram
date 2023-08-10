@@ -103,9 +103,22 @@ const editUser = async (req, res) => {
     }
 };
 
+const getUsernameUsers = async (req, res) => {
+    try{
+        console.log('req.params.username ' + req.params.username);
+        const users = await User.findAll({
+            where: {
+                id: req.params.username                    
+            }});
+        res.status(200).send(users)   
+    } catch(error){
+        res.status(500).send(error)
+    }    
+}
 
 module.exports = {
     SendVerificationEmail,
     verifyCode,
-    editUser
+    editUser,
+    getUsernameUsers
 }

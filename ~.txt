@@ -27,8 +27,7 @@
 17. Создать API для получения списка постов по username пользователя (/api/posts/byUsername/:username) +
 18. API для получения списка подписчиков на пользователя по username +
 19. API для получения списка пользователей на кого подписан пользователь по username +
--
-20. API для получения детальной информации о пользователе по username
+20. API для получения детальной информации о пользователе по username +
 -
 21. Разработать API для создания и удаление лайков на пост, сторис, коммент (создание/удаление лайка для поста/сторис +)
 22. Бонус:
@@ -151,4 +150,8 @@ git push origin main
 -
 git add .
 git commit -m "add /api/followers/byUsername/:username , /api/followed/byUsername/:username"
+git push origin main
+-
+git add .
+git commit -m "add /api/auth/users/byUsername/:username"
 git push origin main

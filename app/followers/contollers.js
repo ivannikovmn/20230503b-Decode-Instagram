@@ -44,7 +44,7 @@ const deleteFollower = async (req, res) => {
 
 const getUsernameFollowed = async (req, res) => {
     try{
-        console.log('req.params.username ' + req.params.username);
+        // console.log('req.params.username ' + req.params.username);
         const followers = await Follower.findAll({
             where: {
                 followerUserId: req.params.username                    
