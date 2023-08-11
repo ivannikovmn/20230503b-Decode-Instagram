@@ -34,6 +34,7 @@
 	Бонусный сложный алгоритм написать API который будет возвращать список Suggestions (предложение)
 	Логика должна находить максимум 5 рекомендаций
 	В список рекомедации добавлять последние 5 человек на которых подписывались те на кого подписанны вы или ваши подпсичики. 
+	(вы - это /:userId, лимит 1чел, т.к в базе сейчас всего 3 пользователя => возможны 2 подписки) +
 
 
 https://docs.google.com/document/d/1y_5n4ELZWvgtChaTtv3SdYCkY0JyaFYj7qV8BoQbdZQ/edit?usp=sharing
@@ -154,4 +155,8 @@ git push origin main
 -
 git add .
 git commit -m "add /api/auth/users/byUsername/:username"
+git push origin main
+-
+git add .
+git commit -m "fix create followed, fix get follower and followed, add suggestions"
 git push origin main

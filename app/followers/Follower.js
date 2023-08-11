@@ -10,7 +10,8 @@ const Follower = sequelize.define('Follower', {
   }      
 });
 
-Follower.belongsTo(User, { foreignKey: 'userid' }); // (пользователь, за которым следят, именно так а не followedUserId, т.к уже в проекте фигурирует userid)
-Follower.belongsTo(User, { foreignKey: 'followerUserId' }); // (пользователь, который следит за кем-то)
+Follower.belongsTo(User, { foreignKey: 'userid' }); 
+Follower.belongsTo(User, { foreignKey: 'followerUserId' }); // (пользователь, который следит за кем-то /он подписан/, подписчик)
+Follower.belongsTo(User, { foreignKey: 'followedUserId' }); // (пользователь, за которым следят, подписка)
 
 module.exports = Follower;
