@@ -20,6 +20,7 @@ app.use(require('./app/participants/routes'))
 app.use(require('./app/resume/routes')) 
 app.use(require('./app/likes/routes')) 
 app.use(require('./app/followers/routes')) 
+app.use(require('./app/comments/routes')) 
 
 app.listen(8000, () => {
     console.log('Server is listening on port 8000');

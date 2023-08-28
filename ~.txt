@@ -93,6 +93,13 @@ npx sequelize-cli migration:generate --name create-resume
 --- l-14
 npx sequelize-cli migration:generate --name create-like-model
 npx sequelize-cli migration:generate --name create-follower
+npx sequelize-cli migration:generate --name create-comment-model
+
+---восстановление 
+docker-compose up
+npx sequelize-cli db:migrate
+npx sequelize-cli db:seed:all
+npm run dev
 
 Termnal vsc(bash) (Git)
 git init 
@@ -159,4 +166,8 @@ git push origin main
 -
 git add .
 git commit -m "fix create followed, fix get follower and followed, add suggestions"
+git push origin main
+-
+git add .
+git commit -m "add RestAPI l-14(p2-p3,p6[delete] post/story comment)"
 git push origin main
