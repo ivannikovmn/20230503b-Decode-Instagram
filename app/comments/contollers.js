@@ -25,7 +25,17 @@ const deleteComment = async (req, res) => {
     res.status(200).end()
 }
 
+const getIdpoststoryComments = async (req, res) => {
+    const comments = await Comment.findAll({
+        where: {
+            resumeId: req.params.idpoststory           
+        }});
+    res.status(200).send(comments)   
+}
+
+
 module.exports = {
     createComment,
-    deleteComment
+    deleteComment,
+    getIdpoststoryComments
 }
