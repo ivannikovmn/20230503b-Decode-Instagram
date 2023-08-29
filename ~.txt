@@ -118,10 +118,22 @@ cd 20230621b-Decode-Instagram/
 npm i
 	npm start
 npm run prod_localserver_windows
+git pull
 Чтобы заработала на ubuntu нужно:
 	rm -rf node_modules
 	rm package-lock.json
-
+	npm install
+	npm rebuild bcrypt --update-binary
+	yarn install
+	rm -rf node_modules/bcrypt
+	npm install bcrypt
+npm run prod_digitalocean_ubuntu
+ubuntu
+	npm install -g sequelize-cli
+windows
+	set NODE_ENV=production sequelize-cli db:migrate
+	set NODE_ENV=production sequelize db:seed:all
+git pull
 ---восстановление 
 docker-compose up
 npx sequelize-cli db:migrate
