@@ -91,7 +91,27 @@ npx sequelize-cli migration:generate --name create-resume
 npx sequelize-cli migration:generate --name create-like-model
 npx sequelize-cli migration:generate --name create-follower
 npx sequelize-cli migration:generate --name create-comment-model
-
+---l16
+https://cloud.digitalocean.com/welcome?i=297482
+https://cloud.digitalocean.com/projects/96c36959-1b1a-4d41-a202-ee60a271da1b/resources?i=297482
+dbaas-db-4574312
+https://cloud.digitalocean.com/droplets?i=297482
+ubuntu-s-2vcpu-4gb-120gb-in
+ssh root@206.189.84.19
+ls
+cd ../
+cd usr/
+usr
+cd ../home
+cd
+pwd
+cd root
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+	source ~/.bashrc
+	nvm install v18.17.0
+git init
 ---восстановление 
 docker-compose up
 npx sequelize-cli db:migrate
@@ -171,4 +191,8 @@ git push origin main
 ---
 git add .
 git commit -m "add /api/comments/byIdPostStory/:idpoststory"
+git push origin main
+---
+git add .
+git commit -m "decode.kz first commit"
 git push origin main
