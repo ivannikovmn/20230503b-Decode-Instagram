@@ -1,7 +1,10 @@
 const { Sequelize } = require('sequelize');
+const fs = require('fs')
+const path = require("path")
 const dbConf = require('./config')
 let sequelize;
 
+// console.log(process.env)
 if(process.env.NODE_ENV === "production"){
   console.log("here");
   sequelize = new Sequelize(dbConf.production.database, dbConf.production.username, dbConf.production.password, {

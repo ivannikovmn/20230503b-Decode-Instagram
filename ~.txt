@@ -117,6 +117,11 @@ git clone https://github.com/ivannikovmn/20230621b-Decode-Instagram.git
 cd 20230621b-Decode-Instagram/
 npm i
 	npm start
+npm run prod_localserver_windows
+Чтобы заработала на ubuntu нужно:
+	rm -rf node_modules
+	rm package-lock.json
+
 ---восстановление 
 docker-compose up
 npx sequelize-cli db:migrate
