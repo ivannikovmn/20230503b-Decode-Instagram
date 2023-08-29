@@ -94,9 +94,10 @@ npx sequelize-cli migration:generate --name create-comment-model
 ---l16
 https://cloud.digitalocean.com/welcome?i=297482
 https://cloud.digitalocean.com/projects/96c36959-1b1a-4d41-a202-ee60a271da1b/resources?i=297482
-dbaas-db-4574312
+dbaas-db-4574312 > db-postgresql-sgp1-45559
 https://cloud.digitalocean.com/droplets?i=297482
 ubuntu-s-2vcpu-4gb-120gb-in
+-
 ssh root@206.189.84.19
 ls
 cd ../
@@ -112,6 +113,10 @@ https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubunt
 	source ~/.bashrc
 	nvm install v18.17.0
 git init
+git clone https://github.com/ivannikovmn/20230621b-Decode-Instagram.git
+cd 20230621b-Decode-Instagram/
+npm i
+	npm start
 ---восстановление 
 docker-compose up
 npx sequelize-cli db:migrate
@@ -195,4 +200,8 @@ git push origin main
 ---
 git add .
 git commit -m "decode.kz first commit"
+git push origin main
+---
+git add .
+git commit -m "production mode configured"
 git push origin main
