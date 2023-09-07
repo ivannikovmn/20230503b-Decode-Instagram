@@ -146,6 +146,8 @@ pm2 logs
 http://206.189.84.19:8000/api/region/cities
 -
 npm install cors
+	git pull
+	pm2 restart 0
 ---восстановление 
 docker-compose up
 npx sequelize-cli db:migrate
