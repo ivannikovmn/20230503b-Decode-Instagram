@@ -10,18 +10,20 @@ if(process.env.NODE_ENV === "production"){
   sequelize = new Sequelize(dbConf.production.database, dbConf.production.username, dbConf.production.password, {
     host: dbConf.production.host,
     dialect: dbConf.production.dialect,
-    port: dbConf.production.port,
-    dialectOptions: {
-      ssl: {
-        ca: fs.readFileSync(path.resolve("config", "ca-certificate.crt")),
-      },    
-    }
+    // port: dbConf.production.port,
+    // dialectOptions: {
+    //   ssl: {
+    //     ca: fs.readFileSync(path.resolve("config", "ca-certificate.crt")),
+    //   },    
+    // }
   });
-} else{
+} 
+else{
 const sequelize = new Sequelize(dbConf.development.database, dbConf.development.username, dbConf.development.password, {
     host: dbConf.development.host,
     dialect: dbConf.development.dialect,
   });
+
 }
 
 // Проверка соединения с базой данных

@@ -153,6 +153,16 @@ docker-compose up
 npx sequelize-cli db:migrate
 npx sequelize-cli db:seed:all
 npm run dev
+---
+	git config pull.ff only
+---
+docker-compose up
+npx sequelize-cli db:migrate
+npx sequelize-cli db:seed:all
+npm run prod_localserver_windows
+---
+docker
+npm run prod_localserver_windows
 
 Termnal vsc(bash) (Git)
 git init 
@@ -235,4 +245,19 @@ git push origin main
 ---
 git add .
 git commit -m "production mode configured"
+git push origin main
+---восстановление на hdd
+git init 
+git add .
+git commit -m "fix production localhost"
+	p.s git branch --move master main - переименовать master в main в visual code 
+git remote add origin https://github.com/ivannikovmn/20230503b-Decode-Instagram
+	git pull origin main
+	git push origin main
+	git fetch origin main
+	git reset --hard origin/main
+	(востановилось до того что в удаленном репозитории)
+---
+git add .	
+git commit -m "fix production localhost"
 git push origin main
